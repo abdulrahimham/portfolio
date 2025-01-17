@@ -1,6 +1,135 @@
+/* General Styles */
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
-  }
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar Styles */
+nav ul {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(0, 0, 255);
+  padding: 0.5rem 1rem;
+  font-weight: normal; 
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+nav a:hover {
+  border-bottom: 5px solid #ccc;
+  color: black;
+}
+
+/***************************************************************/
+/***************************************************************/
+/***************************************************************/
+
+/* Current Page Styling */
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem; 
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: inherit;
+}
+
+form label {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+form input,
+form textarea,
+form button {
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  grid-column: span 2;
+  background-color: rgb(0, 0, 255);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: rgb(0, 0, 200);
+}
+
+/***************************************************************/
+/***************************************************************/
+/***************************************************************/
+
+/* Projects Page Styling */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); 
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.projects article {
+  border: 1px solid #ccc;
+  border-radius: 8px; 
+  padding: 1rem; 
+  background-color: #f9f9f9; 
+  display: grid;
+  grid-template-rows: subgrid; 
+  grid-row: span 3; 
+}
+
+.projects article h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.projects article img {
+  max-width: 100%; 
+  border-radius: 4px; 
+}
+
+.projects article p {
+  margin: 0; 
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Global Heading Styling */
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  line-height: 1.1; 
+  text-wrap: balance; 
+}

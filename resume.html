@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
-    <link rel="stylesheet" href="../styles.css"> <!-- Link your CSS file -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
-        <h1>Abdulrahim Ham</h1>
-        <p>Data Science Student | Aspiring Data Analyst/Scientist </p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="project/index.html">Projects</a></li>
+                <li><a href="resume.html" class="current">Resume</a></li>
+                <li><a href="https://github.com/abdulrahimham" target="_blank">GitHub Profile</a></li>
+                <li><a href="contact/index.html">Contact Me</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="project/index.html">Projects</a>
-        <a href="contact/index.html">Contact</a>
-        <a href="https://github.com/abdulrahimham" target="_blank">Profile </a> 
-    </nav>
-
+    
     <main>
-        <!-- Personal Info Section -->
+        <h1>Abdulrahim Ham</h1>
+        <p>Data Science Student | Aspiring Data Analyst/Scientist</p>
+
+        <!-- Contact Information Section -->
         <section>
             <header>
                 <h2>Contact Information</h2>
@@ -29,7 +32,18 @@
                 <li>Email: <a href="mailto:amham@ucsd.edu">amham@ucsd.edu</a></li>
                 <li>Phone: +1 (916) 897-1894</li>
                 <li>Location: San Diego, CA</li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/abdulrahimham" target="_blank">linkedin.com/in/abdulrahimham</a></li>
             </ul>
+        </section>
+
+        <!-- Summary Section -->
+        <section>
+            <header>
+                <h2>Summary</h2>
+            </header>
+            <p>
+                Data Science student with hands-on experience in Python, R, SQL, and data visualization tools like Tableau and Jupyter. Strong analytical skills with a passion for developing data-driven solutions. Adept at collaborating with teams and solving complex problems to drive business decisions.
+            </p>
         </section>
 
         <!-- Education Section -->
@@ -39,10 +53,11 @@
             </header>
             <article>
                 <h3>University of California, San Diego</h3>
-                <time>Expected: June 2026</time>
+                <p><time>Expected: June 2026</time></p>
                 <p>Bachelor of Science in Data Science</p>
                 <ul>
-                    <li>Relevant Coursework: Machine Learning, Data Visualization, Database Systems</li>
+                    <li>Relevant Coursework: Machine Learning, Data Visualization, Database Systems, Statistics</li>
+                    <li>Dean’s List (2 quarters)</li>
                 </ul>
             </article>
         </section>
@@ -55,25 +70,51 @@
             <article>
                 <h3>Security Guard</h3>
                 <p><strong>Qualcomm</strong>, San Diego, CA</p>
-                <time>December 2024 - Present</time>
+                <p><time>December 2024 - Present</time></p>
                 <ul>
-                    <li>Conducted routine patrols and inspections to identify and address security breaches.</li>
-                    <li>Maintained detailed reports on incidents, daily activity logs, and surveillance data.</li>
-                    <li>Collaborated with internal teams to improve security protocols and mitigate risks.</li>
+                    <li>Implemented detailed daily logs and incident reports to ensure safety protocols were followed.</li>
+                    <li>Monitored surveillance systems and resolved potential security risks proactively.</li>
+                    <li>Collaborated with cross-functional teams to address facility security enhancements.</li>
                 </ul>
             </article>
+            <article>
         </section>
 
         <!-- Skills Section -->
         <section>
             <header>
-                <h2>Skills</h2>
+                <h2>Technical Skills</h2>
             </header>
             <ul>
-                <li>Programming: Python, R, SQL</li>
-                <li>Tools: Tableau, AWS, Jupyter, Git</li>
-                <li>Languages: English</li>
+                <li><strong>Programming Languages:</strong> Python, R, SQL</li>
+                <li><strong>Data Tools:</strong> Tableau, AWS, Jupyter, Excel</li>
+                <li><strong>Machine Learning:</strong> Scikit-learn, TensorFlow</li>
+                <li><strong>Databases:</strong> MySQL, PostgreSQL</li>
+                <li><strong>Version Control:</strong> Git/GitHub</li>
             </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <header>
+                <h2>Projects</h2>
+            </header>
+            <article>
+                <h3>Recipe Analysis</h3>
+                <p>Developed an interactive dashboard analyzing recipes and ratings using Python and Tableau.</p>
+                <ul>
+                    <li>Cleaned and transformed a dataset of 100,000+ records using Pandas and SQL.</li>
+                    <li>Built machine learning models to predict recipe ratings with 85% accuracy.</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Customer Churn Prediction</h3>
+                <p>Created a predictive model for customer churn for a telecommunications company.</p>
+                <ul>
+                    <li>Used Scikit-learn to train logistic regression and random forest models on customer data.</li>
+                    <li>Increased accuracy by 20% by performing feature engineering and hyperparameter tuning.</li>
+                </ul>
+            </article>
         </section>
     </main>
 
