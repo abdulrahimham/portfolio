@@ -3,91 +3,50 @@ body {
   max-width: 100ch;
   margin-inline: auto;
   padding: 1rem;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;  
 }
 
+/***************************************************************/
+/***************************************************************/
+/***************************************************************/
+
 /* Navigation Bar Styles */
-nav ul {
-  list-style: none; 
-  padding: 0;
-  margin: 0;
+nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* Spread items evenly */
   align-items: center;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 0.5rem;
+  border-bottom: 2px solidoklch(50% 10% 200 / 40%);
+  ;
 }
 
 nav li {
   margin: 0;
+  list-style: none; /* Remove bullet points */
 }
 
 nav a {
   text-decoration: none;
-  color: rgb(0, 0, 255);
-  padding: 0.5rem 1rem;
-  font-weight: normal; 
-  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  color: black;
+  border-bottom: 2px solid oklch(50% 10% 200 / 40%);
+  padding: 0.5rem 0;
+  font-weight: normal;
+  transition: all 0.3s ease;
+  display: block; /* Make anchor elements take full width */
+  text-align: center; /* Center align text */
+  flex-grow: 1; /* Make all links take equal space */
 }
 
 nav a:hover {
-  border-bottom: 5px solid #ccc;
-  color: black;
+  border-bottom: 5px solid oklch(50% 10% 200 / 40%);
+  ; /* Thicker underline on hover */
 }
 
 /* Current Page Styling */
 nav a.current {
   font-weight: bold;
   color: black;
-  border-bottom: 3px solid #ccc;
+  border-bottom: 5px solid oklch(50% 10% 200 / 40%);;
   pointer-events: none; /* Prevent clicking the current link */
-}
-
-
-/***************************************************************/
-/***************************************************************/
-/***************************************************************/
-
-form {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1rem; 
-  width: 100%;
-  max-width: 600px;
-  margin: 2rem auto;
-  font-family: inherit;
-}
-
-form label {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 1rem;
-}
-
-form input,
-form textarea,
-form button {
-  width: 100%;
-  margin: 0;
-  padding: 0.5rem;
-  font-family: inherit;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  grid-column: span 2;
-  background-color: rgb(0, 0, 255);
-  color: white;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: rgb(0, 0, 200);
 }
 
 /***************************************************************/
@@ -130,6 +89,10 @@ form button:hover {
   line-height: 1.5;
 }
 
+/***************************************************************/
+/***************************************************************/
+/***************************************************************/
+
 /* Global Heading Styling */
 h1 {
   font-size: 3rem;
@@ -137,7 +100,30 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-h2 {
-  line-height: 1.1; 
-  text-wrap: balance; 
+/* Theme Dropdown */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
+
+.color-scheme select {
+  padding: 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* Dark theme navigation link styles */
+nav[data-theme="dark"] nav a {
+  color: white !important; /* Force white text for links */
+}
+
+nav[data-theme="dark"] nav a.current {
+  color: white !important; /* Ensure the current link stays white */
+  font-weight: bold;
+}
+
+
