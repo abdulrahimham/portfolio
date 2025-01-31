@@ -127,6 +127,58 @@ nav a.current {
     color: var(--text-color); 
 }
 
+/* Contact Form Styles */
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+  max-width: 600px; 
+  margin: 0 auto;
+}
+
+form label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1; 
+  align-items: center; 
+}
+
+form label span {
+  grid-column: 1; 
+  font-weight: bold;
+  margin-bottom: 0.5em; 
+}
+
+form input,
+form textarea,
+form button {
+  grid-column: 2; 
+  width: 100%; 
+  padding: 0.5em;
+  font: inherit; 
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; 
+}
+
+form textarea {
+  resize: vertical; /
+}
+
+form button {
+  grid-column: 1 / -1; 
+  background-color: oklch(50% 10% 200 / 40%);
+  color: var(--text-color);
+  border: none;
+  padding: 0.75em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: oklch(50% 10% 200 / 60%);
+}
 
 /* Projects Page Specific Styles */
 .projects-title {
