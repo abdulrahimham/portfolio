@@ -3,101 +3,59 @@ body {
   max-width: 100ch;
   margin-inline: auto;
   padding: 1rem;
-  font-family: Arial, sans-serif;  
+  font-family: Arial, sans-serif;
+  color: canvastext; 
+  background-color: canvas; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
 }
 
-/***************************************************************/
-/***************************************************************/
-/***************************************************************/
+/* Global Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1; 
+  text-wrap: balance; 
+  margin: 0 0 0.5em 0; 
+}
+
+h1 {
+  font-size: 2.5em; 
+  font-weight: bold; 
+}
+
+h2 {
+  font-size: 1.8em;
+  font-weight: 600; 
+}
+
 
 /* Navigation Bar Styles */
 nav {
   display: flex;
-  justify-content: space-around; /* Spread items evenly */
+  justify-content: space-around;
   align-items: center;
-  border-bottom: 2px solidoklch(50% 10% 200 / 40%);
-  ;
-}
-
-nav li {
-  margin: 0;
-  list-style: none; /* Remove bullet points */
+  border-bottom: 2px solid oklch(50% 10% 200 / 40%);
 }
 
 nav a {
   text-decoration: none;
-  color: black;
+  color: inherit; 
   border-bottom: 2px solid oklch(50% 10% 200 / 40%);
   padding: 0.5rem 0;
-  font-weight: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
   transition: all 0.3s ease;
-  display: block; /* Make anchor elements take full width */
-  text-align: center; /* Center align text */
-  flex-grow: 1; /* Make all links take equal space */
+  display: block;
+  text-align: center;
+  flex-grow: 1;
 }
 
 nav a:hover {
   border-bottom: 5px solid oklch(50% 10% 200 / 40%);
-  ; /* Thicker underline on hover */
 }
 
-/* Current Page Styling */
 nav a.current {
   font-weight: bold;
-  color: black;
-  border-bottom: 5px solid oklch(50% 10% 200 / 40%);;
-  pointer-events: none; /* Prevent clicking the current link */
-}
-
-/***************************************************************/
-/***************************************************************/
-/***************************************************************/
-
-/* Projects Page Styling */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); 
-  gap: 1rem;
-  padding: 1rem;
-}
-
-.projects article {
-  border: 1px solid #ccc;
-  border-radius: 8px; 
-  padding: 1rem; 
-  background-color: #f9f9f9; 
-  display: grid;
-  grid-template-rows: subgrid; 
-  grid-row: span 3; 
-}
-
-.projects article h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.1;
-  margin-bottom: 0.5rem;
-}
-
-.projects article img {
-  max-width: 100%; 
-  border-radius: 4px; 
-}
-
-.projects article p {
-  margin: 0; 
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/***************************************************************/
-/***************************************************************/
-/***************************************************************/
-
-/* Global Heading Styling */
-h1 {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
+  border-bottom: 5px solid oklch(50% 10% 200 / 40%);
+  pointer-events: none;
 }
 
 /* Theme Dropdown */
@@ -116,14 +74,136 @@ h1 {
   font-size: 0.9rem;
 }
 
-/* Dark theme navigation link styles */
-nav[data-theme="dark"] nav a {
-  color: white !important; /* Force white text for links */
+/* Dark theme styles */
+[data-theme="dark"] {
+  color: canvastext;
+  background-color: canvas; 
 }
 
-nav[data-theme="dark"] nav a.current {
-  color: white !important; /* Ensure the current link stays white */
+[data-theme="dark"] nav a {
+  color: canvastext; 
+}
+
+[data-theme="dark"] nav a.current {
+  color: canvastext; 
+}
+
+/* Projects Page Styles */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: 1em; 
+    margin-top: 2em;
+}
+
+.projects article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3; 
+    gap: 0.5em; 
+    border: 1px solid #ddd; 
+    padding: 1em; 
+    border-radius: 8px; 
+    background-color: var(--background-color); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.projects h2 {
+    margin: 0; 
+    font-size: 1.5em;
+    line-height: 1.1; 
+    text-wrap: balance; 
+}
+
+.projects img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 4px; 
+}
+
+.projects p {
+    margin: 0; 
+    font-size: 1em; 
+    color: var(--text-color); 
+}
+
+
+/* Projects Page Specific Styles */
+.projects-title {
+    font-size: 2.5em;
+    margin-bottom: 1em; 
+}
+
+/* GitHub Stats Styles */
+.github-stats {
+  margin-top: 2em;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.github-stats h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.github-stats p {
+  margin: 0.5em 0;
+  font-size: 1.1em;
+  color: var(--text-color);
+}
+
+/* GitHub Stats Styles */
+#profile-stats {
+  margin-top: 2em;
+  padding: 1.5em;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: var(--background-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#profile-stats h2 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5em;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-label {
+  display: block;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5em;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5em;
   font-weight: bold;
+  color: var(--text-color);
 }
-
-
