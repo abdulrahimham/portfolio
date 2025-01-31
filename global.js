@@ -1,18 +1,22 @@
 console.log("IT'S ALIVE!");
 
+// Define the pages for the navigation menu
 const pages = [
-    { url: "", title: "Home" },
-    { url: "project/index.html", title: "Projects" },
-    { url: "resume.html", title: "Resume" },
-    { url: "https://github.com/abdulrahimham", title: "GitHub", external: true },
-    { url: "contact/index.html", title: "Contact Me" }
+    { url: "/portfolio/", title: "Home" },
+    { url: "/portfolio/project/index.html", title: "Projects" }, 
+    { url: "/portfolio/resume.html", title: "Resume" }, 
+    { url: "https://github.com/abdulrahimham", title: "GitHub", external: true }, 
+    { url: "/portfolio/contact/index.html", title: "Contact Me" } 
 ];
 
+// Check if we are on the home page
 const ARE_WE_HOME = document.documentElement.classList.contains("home");
 
+// Create the navigation menu dynamically
 const nav = document.createElement("nav");
 document.body.prepend(nav);
 
+// Add links to the navigation menu
 for (let p of pages) {
     let url = p.url;
     if (!p.url.startsWith("http") && !ARE_WE_HOME) {
@@ -34,6 +38,7 @@ for (let p of pages) {
     nav.appendChild(a);
 }
 
+// Insert the theme switcher dynamically into the page
 document.body.insertAdjacentHTML(
     "afterbegin",
     `
@@ -48,8 +53,10 @@ document.body.insertAdjacentHTML(
     `
 );
 
+// Select the dropdown menu
 const select = document.querySelector("#theme-select");
 
+// Function to apply the theme
 function applyTheme(theme) {
     const colorScheme = theme === "auto" ? "light dark" : theme;
     document.documentElement.style.setProperty("color-scheme", colorScheme);
@@ -62,16 +69,19 @@ function applyTheme(theme) {
     }
 }
 
+// Event listener to handle theme changes
 select.addEventListener("input", (event) => {
     const theme = event.target.value;
     applyTheme(theme); 
-    localStorage.setItem("colorScheme", theme); 
+    localStorage.setItem("colorScheme", theme);
 });
 
+// Load the user's saved preference on page load
 const savedTheme = localStorage.getItem("colorScheme") || "auto";
 applyTheme(savedTheme); 
 select.value = savedTheme; 
 
+// Function to get JSON data
 export async function fetchJSON(url) {
     try {
         const response = await fetch(url);
@@ -87,6 +97,7 @@ export async function fetchJSON(url) {
     }
 }
 
+// Function to render projects
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
     containerElement.innerHTML = '';
 
@@ -108,18 +119,4 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
         containerElement.appendChild(article);
     });
-}
-
-export async function fetchGitHubData(username) {
-    try {
-        const response = await fetch(`https://api.github.com/users/${username}`);
-        if (!response.ok) {
-            throw new Error(`Failed to fetch GitHub data: ${response.statusText}`);
-        }
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching GitHub data:', error);
-        return null;
-    }
 }
