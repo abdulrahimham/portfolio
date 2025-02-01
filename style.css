@@ -26,7 +26,6 @@ h2 {
   font-weight: 600; 
 }
 
-
 /* Navigation Bar Styles */
 nav {
   display: flex;
@@ -162,7 +161,7 @@ form button {
 }
 
 form textarea {
-  resize: vertical; /
+  resize: vertical; 
 }
 
 form button {
