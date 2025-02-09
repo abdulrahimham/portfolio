@@ -1,6 +1,5 @@
 import { fetchJSON, renderProjects } from './global.js';
 
-// Function to fetch GitHub data
 async function fetchGitHubData(username) {
     try {
         const response = await fetch(`https://api.github.com/users/${username}`);
@@ -17,16 +16,12 @@ async function fetchGitHubData(username) {
 
 (async function () {
     try {
-        // Fetch all projects
         const projects = await fetchJSON('./lib/projects.json');
 
-        // Filter the first 3 projects
         const latestProjects = projects.slice(0, 3);
 
-        // Select the projects container
         const projectsContainer = document.querySelector('.projects');
 
-        // Render the latest projects
         if (projectsContainer) {
             renderProjects(latestProjects, projectsContainer, 'h2');
         }
@@ -34,12 +29,9 @@ async function fetchGitHubData(username) {
         console.error('Error loading latest projects:', error);
     }
 
-    // Fetch GitHub data
     const githubUsername = 'abdulrahimham'; 
     const githubData = await fetchGitHubData(githubUsername);
-    console.log('GitHub data:', githubData); // Debugging
 
-    // Populate GitHub stats
     if (githubData) {
         document.getElementById('public-repos').textContent = githubData.public_repos;
         document.getElementById('followers').textContent = githubData.followers;
