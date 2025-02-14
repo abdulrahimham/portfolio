@@ -122,3 +122,5 @@ function filterProjects(year) {
     console.log("Filtered Projects after both filters:", filteredProjects);
     renderProjects(filteredProjects, projectsContainer, 'h2');
 }
+
+

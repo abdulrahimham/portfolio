@@ -12,6 +12,7 @@ const pages = [
     { url: `${BASE_PATH}project/index.html`, title: "Projects" },
     { url: `${BASE_PATH}resume.html`, title: "Resume" },
     { url: "https://github.com/abdulrahimham", title: "GitHub", external: true },
+    { url: `${BASE_PATH}meta/index.html`, title: "Meta" },
     { url: `${BASE_PATH}contact/index.html`, title: "Contact Me" }
 ];
 

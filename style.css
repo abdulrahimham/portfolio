@@ -213,3 +213,173 @@ nav a.current {
   text-decoration: underline;
 }
 
+/* Summary Stats Table */
+.summary-stats {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-family: Arial, sans-serif;
+}
+
+.summary-stats th,
+.summary-stats td {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Summary Stats Table */
+.summary-stats {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Chart Styling */
+#chart {
+  margin: 1rem 0;
+}
+
+.dots circle {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.dots circle:hover {
+  opacity: 1;
+  stroke: black;
+  stroke-width: 1;
+}
+
+.gridlines line {
+  stroke: #ddd; 
+  stroke-width: 1px; 
+  shape-rendering: crispEdges;
+}
+
+.gridlines path {
+  stroke: none;
+}
+
+/* Tooltip styling */
+.info {
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0.5em;
+  font-size: 0.9em;
+  background-color: var(--tooltip-bg, white); 
+  color: var(--tooltip-text, black); 
+  border: 1px solid var(--tooltip-border, #ddd); 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px); 
+  transition: opacity 200ms, visibility 200ms;
+}
+
+.info dt {
+  font-weight: bold;
+  color: var(--tooltip-label, #555); 
+}
+
+/* Dark mode styles for tooltip */
+[data-theme="dark"] .info {
+  --tooltip-bg: #333; 
+  --tooltip-text: white;
+  --tooltip-border: #555; 
+  --tooltip-label: white; 
+}
+
+.info dd {
+  margin: 0;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Hide tooltip when not visible */
+dl.info[hidden] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Styling for the brush selection rectangle */
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+@keyframes marching-ants {
+  to {
+      stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+/* Styling for selected dots */
+circle.selected {
+  fill: #ff6b8b;
+}
+
+/* Selection count container */
+#selection-count-container {
+  margin-top: 1.5em;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#selection-count-container p {
+  margin: 0;
+}
+
+/* Language breakdown container */
+#language-breakdown-container {
+  margin-top: 1.5em;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#language-breakdown-container h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* Language breakdown list */
+#language-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#language-breakdown dt {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+}
+
+#language-breakdown dd {
+  margin: 0;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
